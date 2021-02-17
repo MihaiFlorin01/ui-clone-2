@@ -5,3 +5,12 @@ td.mat-cell{
 th.mat-header-cell{
   border-bottom-style: none;
 }
+
+button {
+  right: 70px;
+
+}
+
+mat-icon {
+
+}

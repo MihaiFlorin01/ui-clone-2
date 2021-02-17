@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {Employee} from '../../../model/employee';
 import {EmployeeService} from '../../../service/employee.service';
 import {Router} from '@angular/router';
-import {MatDialog} from '@angular/material/dialog';
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-employee-list',
@@ -13,12 +13,13 @@ import {MatDialog} from '@angular/material/dialog';
 export class EmployeeListComponent implements OnInit {
   employee: Employee;
   employees: Employee[];
-  columnsToDisplay = ['firstName', 'lastName', 'emailId', 'actions'];
+  columnsToDisplay = ['firstName', 'lastName', 'emailId', 'actions', 'create_employee'];
 
   constructor(private employeeService: EmployeeService,
               private router: Router,
-              private dialog: MatDialog) {
-  }
+              private dialog: MatDialog,
+              private dialogDeleteEmployee: DialogDeleteEmployee)
+  {}
 
   ngOnInit(): void {
     this.getEmployees();
@@ -40,25 +41,30 @@ export class EmployeeListComponent implements OnInit {
   }
 
   deleteEmployee(id: number): void {
-    this.employeeService.deleteEmployee(id).subscribe(data => {
-      console.log(data);
-      this.getEmployees();
+    this.dialog.open(DialogDeleteEmployee).afterClosed().subscribe(result => {
+
     });
   }
 }
 
 @Component({
   selector: 'Dialog-Success',
-  templateUrl: 'dialogDeleteEmployee.html',
+  templateUrl: '../employee-delete/dialogDeleteEmployee.html',
 })
 
 export class DialogDeleteEmployee{
 
-  yes(): void {
-    console.log('yes');
-  }
+  constructor(
+    public dialogRef: MatDialogRef<DialogDeleteEmployee>) {}
 
   no(): void {
     console.log('no');
+    this.dialogRef.close();
   }
+
+  yes(): boolean {
+    console.log('yes');
+    return true;
+  }
+
 }
