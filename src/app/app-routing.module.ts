@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { EmployeeListComponent } from './components/employees/employee-list/employee-list.component';
-import { CreateEmployeeComponent } from './components/employees/create-employee/create-employee.component';
-import {UpdateEmployeeComponent} from './components/employees/update-employee/update-employee.component';
-import {EmployeeDetailsComponent} from "./components/employees/employee-details/employee-details.component";
+import {WebsiteListComponent} from "./components/employees/list/website-list.component";
+import {CreateWebsiteComponent} from "./components/employees/create/create-website.component";
+import {UpdateWebsiteComponent} from "./components/employees/update/update-website.component";
+import {WebsiteDetailsComponent} from "./components/employees/details/website-details.component";
+
 
 const routes: Routes = [
-  {path: 'employees', component: EmployeeListComponent},
-  {path: 'create-employee', component: CreateEmployeeComponent},
-  {path: '', redirectTo: 'employees', pathMatch: 'full' },
-  {path: 'update-employee/:id', component: UpdateEmployeeComponent},
-  {path: 'employee-details/:id', component: EmployeeDetailsComponent}
+  {path: 'websites', component: WebsiteListComponent},
+  {path: 'create-website', component: CreateWebsiteComponent},
+  {path: '', redirectTo: 'websites', pathMatch: 'full' },
+  {path: 'update/:id', component: UpdateWebsiteComponent},
+  {path: 'details/:id', component: WebsiteDetailsComponent}
 ];
 
 @NgModule({

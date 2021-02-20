@@ -5,10 +5,10 @@ import {RouterModule} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {CreateEmployeeComponent, DialogCreateEmployee} from './components/employees/create-employee/create-employee.component';
+import {CreateWebsiteComponent, DialogCreateWebsite} from './components/employees/create/create-website.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { EmployeeDetailsComponent } from './components/employees/employee-details/employee-details.component';
+import { WebsiteDetailsComponent } from './components/employees/details/website-details.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatInputModule} from '@angular/material/input';
 import {MatPaginatorModule} from '@angular/material/paginator';
@@ -19,24 +19,24 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import {DialogDeleteEmployee} from "./components/employees/employee-delete/DialogDeleteEmployee";
+import {DialogDeleteWebsite} from "./components/employees/delete/DialogDeleteWebsite";
 import {
-  DialogUpdateEmployee,
-  UpdateEmployeeComponent
-} from "./components/employees/update-employee/update-employee.component";
-import {EmployeeListComponent} from "./components/employees/employee-list/employee-list.component";
+  DialogUpdateWebsite,
+  UpdateWebsiteComponent
+} from "./components/employees/update/update-website.component";
+import {WebsiteListComponent} from "./components/employees/list/website-list.component";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatDialogModule, MatDialogRef} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
     AppComponent,
-    DialogCreateEmployee,
-    DialogDeleteEmployee,
-    CreateEmployeeComponent,
-    UpdateEmployeeComponent,
-    EmployeeDetailsComponent,
-    EmployeeListComponent
+    DialogCreateWebsite,
+    DialogDeleteWebsite,
+    CreateWebsiteComponent,
+    UpdateWebsiteComponent,
+    WebsiteDetailsComponent,
+    WebsiteListComponent
   ],
   imports: [
     BrowserModule,
@@ -59,12 +59,12 @@ import {MatDialogModule, MatDialogRef} from "@angular/material/dialog";
     MatDialogModule,
     MatTableModule
   ],
-  entryComponents: [CreateEmployeeComponent, DialogCreateEmployee, DialogUpdateEmployee, DialogDeleteEmployee],
+  entryComponents: [CreateWebsiteComponent, DialogCreateWebsite, DialogUpdateWebsite, DialogDeleteWebsite],
   providers: [{
     provide: MatDialogRef,
-    useValue: DialogDeleteEmployee
+    useValue: DialogDeleteWebsite
   },
-    DialogDeleteEmployee],
+    DialogDeleteWebsite],
   schemas: [NO_ERRORS_SCHEMA],
   bootstrap: [AppComponent]
 })

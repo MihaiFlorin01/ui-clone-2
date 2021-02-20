@@ -1,22 +1,22 @@
 <div style="text-align: center">
 
-  <h3> Update Employee </h3>
+  <h3> Update Website </h3>
 
   <form (ngSubmit)="onSubmit()">
 
     <mat-form-field class="example-form-field" appearance="fill">
-      <mat-label style="color: black;"> First Name </mat-label>
-      <input matInput [(ngModel)]="employee.firstName" name="firstName">
+      <mat-label style="color: black;">Name </mat-label>
+      <input matInput [(ngModel)]="websitteModel.name" name="name">
     </mat-form-field>
     <br>
     <mat-form-field class="example-form-field" appearance="fill">
-      <mat-label style="color: black;"> Last Name </mat-label>
-      <input matInput [(ngModel)]="employee.lastName" name="lastName">
+      <mat-label style="color: black;">URL</mat-label>
+      <input matInput [(ngModel)]="websitteModel.url" name="url">
     </mat-form-field>
     <br>
     <mat-form-field class="example-form-field" appearance="fill">
-      <mat-label style="color: black;"> Email Id </mat-label>
-      <input matInput [(ngModel)]="employee.emailId" name="emailId">
+      <mat-label style="color: black;"> Active</mat-label>
+      <input matInput [(ngModel)]="websitteModel.active" name="active">
     </mat-form-field>
     <br>
     <button mat-raised-button class="btn btn-dark" type="submit">Submit</button>
