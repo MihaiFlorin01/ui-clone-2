@@ -5,16 +5,9 @@ import {RouterModule} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {
-  DialogDeleteEmployee, EmployeeListComponent
-} from './components/employees/employee-list/employee-list.component';
 import {CreateEmployeeComponent, DialogCreateEmployee} from './components/employees/create-employee/create-employee.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import {
-  DialogUpdateEmployee,
-  UpdateEmployeeComponent
-} from './components/employees/update-employee/update-employee.component';
 import { EmployeeDetailsComponent } from './components/employees/employee-details/employee-details.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatInputModule} from '@angular/material/input';
@@ -26,8 +19,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
+import {DialogDeleteEmployee} from "./components/employees/employee-delete/DialogDeleteEmployee";
+import {
+  DialogUpdateEmployee,
+  UpdateEmployeeComponent
+} from "./components/employees/update-employee/update-employee.component";
+import {EmployeeListComponent} from "./components/employees/employee-list/employee-list.component";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatDialogModule, MatDialogRef} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
