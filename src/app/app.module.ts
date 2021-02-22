@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import {RouterModule} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,14 +19,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import {DialogDeleteWebsite} from "./components/employees/delete/DialogDeleteWebsite";
+import {DialogDeleteWebsite} from './components/employees/delete/DialogDeleteWebsite';
 import {
   DialogUpdateWebsite,
   UpdateWebsiteComponent
-} from "./components/employees/update/update-website.component";
-import {WebsiteListComponent} from "./components/employees/list/website-list.component";
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {MatDialogModule, MatDialogRef} from "@angular/material/dialog";
+} from './components/employees/update/update-website.component';
+import {WebsiteListComponent} from './components/employees/list/website-list.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatOptionModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,9 @@ import {MatDialogModule, MatDialogRef} from "@angular/material/dialog";
     MatIconModule,
     MatListModule,
     MatDialogModule,
-    MatTableModule
+    MatTableModule,
+    MatRadioModule,
+    MatOptionModule
   ],
   entryComponents: [CreateWebsiteComponent, DialogCreateWebsite, DialogUpdateWebsite, DialogDeleteWebsite],
   providers: [{
@@ -65,7 +69,7 @@ import {MatDialogModule, MatDialogRef} from "@angular/material/dialog";
     useValue: DialogDeleteWebsite
   },
     DialogDeleteWebsite],
-  schemas: [NO_ERRORS_SCHEMA],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

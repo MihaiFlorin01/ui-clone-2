@@ -12,7 +12,6 @@ import {MatDialog} from '@angular/material/dialog';
 export class CreateWebsiteComponent implements OnInit {
 
   website: Website = new Website();
-
   constructor(private websiteService: WebsiteService, private router: Router, private dialog: MatDialog) { }
 
   ngOnInit(): void {

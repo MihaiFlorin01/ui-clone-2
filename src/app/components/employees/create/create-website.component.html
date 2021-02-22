@@ -14,10 +14,12 @@
     <input matInput [(ngModel)]="website.url" name="url">
   </mat-form-field>
   <br>
-  <mat-form-field class="example-form-field" appearance="fill">
-    <mat-label style="color: black;">Active</mat-label>
-    <input matInput [(ngModel)]="website.active" name="active">
-  </mat-form-field>
+  <mat-label style="color: black;">Select a status</mat-label>
+  <br>
+  <mat-radio-group class="example-radio-group" [(ngModel)]="booleanValue" name="radioButtons">
+    <mat-radio-button name="option1"> true </mat-radio-button>
+    <mat-radio-button name="option2"> false </mat-radio-button>
+  </mat-radio-group>
   <br>
   <button mat-raised-button class="btn btn-dark" type="submit">Submit</button>
 </form>
