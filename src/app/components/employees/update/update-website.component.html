@@ -6,18 +6,20 @@
 
     <mat-form-field class="example-form-field" appearance="fill">
       <mat-label style="color: black;">Name </mat-label>
-      <input matInput [(ngModel)]="websitteModel.name" name="name">
+      <input matInput [(ngModel)]="websiteModel.name" name="name">
     </mat-form-field>
     <br>
     <mat-form-field class="example-form-field" appearance="fill">
       <mat-label style="color: black;">URL</mat-label>
-      <input matInput [(ngModel)]="websitteModel.url" name="url">
+      <input matInput [(ngModel)]="websiteModel.url" name="url">
     </mat-form-field>
     <br>
-    <mat-form-field class="example-form-field" appearance="fill">
-      <mat-label style="color: black;"> Active</mat-label>
-      <input matInput [(ngModel)]="websitteModel.active" name="active">
-    </mat-form-field>
+    <mat-label style="color: black;">Select a status</mat-label>
+    <br>
+    <mat-radio-group class="example-radio-group" [(ngModel)]="websiteModel.active" name="radioButtons">
+      <mat-radio-button [value]=true name="option1"> true </mat-radio-button>
+      <mat-radio-button [value]=false name="option2"> false </mat-radio-button>
+    </mat-radio-group>
     <br>
     <button mat-raised-button class="btn btn-dark" type="submit">Submit</button>
   </form>

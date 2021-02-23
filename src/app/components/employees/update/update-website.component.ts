@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {WebsiteService} from '../../../service/website.service';
 import {Website} from '../../../model/website';
 import {ActivatedRoute, Router} from '@angular/router';
-import {MatDialog} from "@angular/material/dialog";
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-update-website',
@@ -12,7 +12,7 @@ import {MatDialog} from "@angular/material/dialog";
 export class UpdateWebsiteComponent implements OnInit {
 
   id: number;
-  websitteModel: Website = new Website();
+  websiteModel: Website = new Website();
 
   constructor(private websiteService: WebsiteService, private route: ActivatedRoute,
               private router: Router, private dialog: MatDialog) {
@@ -21,12 +21,12 @@ export class UpdateWebsiteComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.websiteService.getById(this.id).subscribe(data => {
-      this.websitteModel = data;
+      this.websiteModel = data;
     }, error => console.log(error));
   }
 
   onSubmit(): any {
-    this.websiteService.update(this.id, this.websitteModel).subscribe(data => {
+    this.websiteService.update(this.id, this.websiteModel).subscribe(data => {
         this.dialog.open(DialogUpdateWebsite);
         this.goToEmployeeList();
       },
@@ -44,5 +44,11 @@ export class UpdateWebsiteComponent implements OnInit {
 })
 
 export class DialogUpdateWebsite {
+
+  constructor(public dialogRef: MatDialogRef<DialogUpdateWebsite>) {}
+
+  ok(): void {
+    this.dialogRef.close();
+  }
 }
 
