@@ -1,8 +1,8 @@
 import * as Stomp from 'stompjs';
 import * as SockJS from 'sockjs-client';
-import {AppComponent} from '../app.component';
-import {WebsiteService} from "../service/websiteservice";
-import {Injectable} from "@angular/core";
+import {WebsiteService} from '../service/websiteservice';
+import {Injectable} from '@angular/core';
+import {webSocket} from 'rxjs/webSocket';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +14,8 @@ export class WebSocketAPI {
   value = false;
   topic = '/topic/greetings';
   result = '';
+  message = 'hello';
+  subject = webSocket(this.webSocketEndPoint);
   constructor(private websiteService: WebsiteService) {
     // console.log("started");
   }
@@ -28,13 +30,29 @@ export class WebSocketAPI {
     const ws = new SockJS(this.webSocketEndPoint);
     this.stompClient = Stomp.over(ws);
     const that = this;
-    that.stompClient.connect({}, function(frame) {
+    that.stompClient.connect({}, frame =>{
       that.stompClient.subscribe(that.topic, sdkEvent =>{
+        console.log('Connected: ' + frame);
         console.log('!', JSON.parse(sdkEvent.body));
+        if (sdkEvent.body == true) {
+          console.log('TRUEEEEEEEEEEE');
+        }
+        else {
+          console.log('FALSEEEEEEEEEE');
+        }
         that.onMessageReceived(sdkEvent);
+        // that.stompClient.send('/ws/topic/greetings', {}, sdkEvent);
       });
+      // that.stompClient.onMessageReceived()
     });
   }
+
+//
+//   connect2($event): void {
+//     this.subject.subscribe();
+//     this.subject.next(this.message);
+//     this.subject.complete();
+// }
 
 
   // connect(): any {

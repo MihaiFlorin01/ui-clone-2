@@ -1,9 +1,21 @@
 <h1 class = "text-center">{{title}}</h1>
 
-<p style="text-align: center">{{(greeting)}}</p>
+<!--<p style="text-align: center">{{(greeting)}}</p>-->
 
-<div *ngIf="greeting; else elseBlock" style="text-align: center">TRUE</div>
-<ng-template #elseBlock style="text-align: center">FALSE</ng-template>
+<p style="text-align: center"> {{value}} </p>
+
+<!--<div *ngIf="value" style="text-align: center"> TRUE </div>-->
+
+<!--<span *ngIf="value == true" style="text-align: center">asdfasfas</span>-->
+
+<div [innerHtml]="'true'" *ngIf="value == 'true'; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>TRUEEEEEEEEEEEEEE</ng-template>
+<ng-template #elseBlock>FALSEEEEEEEEEEEEE</ng-template>
+
+<!--<span *ngIf="value == true; else elseBlock">Content to render when condition is true.</span>-->
+<!--<span #elseBlock>Content to render when condition is false.</span>-->
+
+<!--<span *ngIf="(value == true)" >1111111111111111</span>-->
 
 <div class="container">
 
