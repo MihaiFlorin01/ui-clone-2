@@ -34,12 +34,6 @@ export class WebSocketAPI {
       that.stompClient.subscribe(that.topic, sdkEvent =>{
         console.log('Connected: ' + frame);
         console.log('!', JSON.parse(sdkEvent.body));
-        if (sdkEvent.body == true) {
-          console.log('TRUEEEEEEEEEEE');
-        }
-        else {
-          console.log('FALSEEEEEEEEEE');
-        }
         that.onMessageReceived(sdkEvent);
         // that.stompClient.send('/ws/topic/greetings', {}, sdkEvent);
       });

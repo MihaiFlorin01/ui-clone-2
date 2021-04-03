@@ -6,7 +6,7 @@ import {
 import {WebSocketAPI} from './websocket/websocketapi';
 import {WebsiteService} from './service/websiteservice';
 import { Component, ChangeDetectorRef } from '@angular/core';
-import {DomSanitizer} from "@angular/platform-browser";
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',

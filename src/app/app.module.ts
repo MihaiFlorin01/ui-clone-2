@@ -21,10 +21,14 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatOptionModule} from '@angular/material/core';
+import { PresentationComponent } from './presentation/presentation.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PresentationComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
