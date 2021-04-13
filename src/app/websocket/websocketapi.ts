@@ -9,7 +9,7 @@ import {webSocket} from 'rxjs/webSocket';
 })
 export class WebSocketAPI {
 
-  webSocketEndPoint = 'http://localhost:8082/ws';
+  webSocketEndPoint = 'http://localhost:8083/ws';
   stompClient: any;
   value = false;
   topic = '/topic/greetings';

@@ -9,7 +9,7 @@ import {Clone1} from '../model/clone1';
 export class CloneService {
 
   // private baseURL = 'http://localhost:8082/api/v1/websites';
-  public baseURLclone = 'http://localhost:8082';
+  public baseURLclone = 'http://localhost:8083';
 
   constructor(private httpClient: HttpClient) { }
 
