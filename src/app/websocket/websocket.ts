@@ -10,7 +10,7 @@ export class WebSocket {
 
   webSocketEndPoint = 'http://localhost:8083/ws';
   stompClient: any;
-  topic = '/topic/greetings';
+  topic = '/topic/clone';
   constructor(private websiteService: WebsiteService) {}
 
   connect(): any {
